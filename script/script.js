@@ -1,26 +1,22 @@
-
-// basic functions
+// basic math functions with rounding decimals 6 if necessary
 const add = function(a, b) {
-    console.log(a + b);
-    return a + b;
+    return Math.round(((a + b) + Number.EPSILON) * 1000000) / 1000000;
 };
 
 const subtract = function(a, b) {
-    console.log(a - b);
-    return a - b;
+    return Math.round(((a - b) + Number.EPSILON) * 1000000) / 1000000;
 };
 
 const multiply = function(a, b) {
-    console.log(a * b);
-    return a * b;
+    return Math.round(((a * b) + Number.EPSILON) * 1000000) / 1000000;
 };
 
 const divide = function(a, b) {
-    console.log(a / b);
-    return a / b;
+    return Math.round(((a / b) + Number.EPSILON) * 1000000) / 1000000;
 };
 
 
+// calculations
 function operate(operator, a, b) {
 
     if (operator == "+") {
@@ -44,7 +40,9 @@ const operatorMinusDOM = document.getElementById("operatorMinus");
 const operatorMultiplyDOM = document.getElementById("operatorMultiply");
 const operatorDivideDOM = document.getElementById("operatorDivide");
 const operatorEqualDOM = document.getElementById("operatorEqual");
+const btnBackspaceDOM = document.getElementById("btnBackspace");
 const btnClearDOM = document.getElementById("btnClear");
+const btnDotDOM = document.getElementById("btnDot");
 const number0DOM = document.getElementById("number0");
 const number1DOM = document.getElementById("number1");
 const number2DOM = document.getElementById("number2");
@@ -101,8 +99,6 @@ let inputs = {
     operator: undefined,
 };
 
-console.log(inputs.firstInput)
-
 
 // PLUS +++++++++++ PLUS
 operatorPlusDOM.onclick = () => {
@@ -123,11 +119,8 @@ operatorPlusDOM.onclick = () => {
             softClear();
             inputs.firstInput = Number(displayStorageDOM.textContent);
         }
-        
-        else if (inputs.firstInput !== undefined && inputs.secondInput !== undefined) {
-            inputs.operator = "+";
-        }
     }
+    
     else {
         inputs.operator = "+";
     }
@@ -154,13 +147,8 @@ operatorMinusDOM.onclick = () => {
             inputs.firstInput = Number(displayStorageDOM.textContent);
             
         }
-        
-        else if (inputs.firstInput !== undefined && inputs.secondInput !== undefined) {
-            inputs.operator = "-";
-            
-            
-        }
     }
+
     else {
         inputs.operator = "-";
     }
@@ -186,11 +174,8 @@ operatorMultiplyDOM.onclick = () => {
             softClear();
             inputs.firstInput = Number(displayStorageDOM.textContent);
         }
-        
-        else if (inputs.firstInput !== undefined && inputs.secondInput !== undefined) {
-            inputs.operator = "*";
-        }
     }
+    
     else {
         inputs.operator = "*";
     }
@@ -207,23 +192,28 @@ operatorDivideDOM.onclick = () => {
             inputs.firstInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = inputs.firstInput; 
             clearDisplay();
-            
         }
         
         else if (inputs.firstInput !== undefined && inputs.secondInput == undefined) {
+
             inputs.secondInput = Number(displayDOM.textContent);
-            displayStorageDOM.textContent = operate(inputs.operator, inputs.firstInput, inputs.secondInput);
-            inputs.operator = "/"
-            softClear();
-            inputs.firstInput = Number(displayStorageDOM.textContent);
+
+            if (inputs.secondInput == "0") {
+                alert("bruh");
+                hardClear();
+            }
+            
+            else if (inputs.secondInput !== "0") {
+                displayStorageDOM.textContent = operate(inputs.operator, inputs.firstInput, inputs.secondInput);
+                inputs.operator = "/"
+                softClear();
+                inputs.firstInput = Number(displayStorageDOM.textContent);
+            }
         }
-        
-        else if (inputs.firstInput !== undefined && inputs.secondInput !== undefined) {
-            inputs.operator = "/";
-        }
-    }
+
     else {
         inputs.operator = "/";
+    }
     }
 };
 
@@ -238,18 +228,45 @@ operatorEqualDOM.onclick = () => {
         }
 
         else if (inputs.firstInput !== undefined && inputs.secondInput == undefined) {
+            
             inputs.secondInput = Number(displayDOM.textContent);
-            displayStorageDOM.textContent = operate(inputs.operator, inputs.firstInput, inputs.secondInput);
-            softClear();
-            inputs.firstInput = Number(displayStorageDOM.textContent);
-        }
-
-        else if (inputs.firstInput !== undefined && inputs.secondInput !== undefined) {
-            displayStorageDOM.textContent = operate(inputs.operator, inputs.firstInput, inputs.secondInput);
-            softClear();
-            inputs.firstInput = Number(displayStorageDOM.textContent);
+            
+            if (inputs.secondInput == "0") {
+                alert("dude");
+                hardClear();
+            }
+            
+            else if (inputs.secondInput !== "0") {
+                displayStorageDOM.textContent = operate(inputs.operator, inputs.firstInput, inputs.secondInput);
+                softClear();
+                inputs.firstInput = Number(displayStorageDOM.textContent);
+            }
         }
     }
 };
 
+
+// DOT ........................... DOT
+btnDotDOM.onclick = () => {
+    
+    if (displayDOM.textContent.includes(".")) return;
+
+    if (displayDOM.textContent == "") {
+        displayDOM.textContent = displayDOM.textContent + "0."
+    }
+
+    else if (displayDOM.textContent !== "") {
+        displayDOM.textContent = displayDOM.textContent + "."
+    }
+};
+
+// Backspace button
+btnBackspaceDOM.onclick = () => {
+
+    if (displayDOM.textContent == "") return;
+
+    else {
+        displayDOM.textContent = displayDOM.textContent.slice(0, -1)
+    }
+};
 
