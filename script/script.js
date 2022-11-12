@@ -65,6 +65,9 @@ const number9DOM = document.getElementById("number9");
 const displayDOM = document.getElementById("display");
 const displayStorageDOM = document.getElementById("displayStorage");
 const displayOperatorDOM = document.getElementById("displayOperator");
+const modalDOM = document.querySelector(".modal");
+const spanDOM = document.querySelector(".close");
+const errorDOM = new Audio('./assets/error.mp3');
 
 
 // clear display function
@@ -248,7 +251,8 @@ const divideFunction = function () {
             inputs.secondInput = Number(displayDOM.textContent);
 
             if (inputs.secondInput == "0") {
-                alert("bruh");
+                openModal();
+                errorDOM.play();
                 hardClear();
             }
             else if (inputs.secondInput !== "0") {
@@ -287,7 +291,8 @@ const equalFunction = function () {
             inputs.secondInput = Number(displayDOM.textContent);
             
             if (inputs.secondInput == "0" && inputs.operator == "/") {
-                alert("dude");
+                openModal();
+                errorDOM.play();
                 hardClear();
             }
             else {
@@ -414,3 +419,12 @@ window.addEventListener("keydown", (event) => {
 
 }, 
 true);
+
+// error modal settings
+function openModal() {
+    modalDOM.style.display = "block";
+};
+
+spanDOM.onclick = function() {
+    modalDOM.style.display = "none";
+};
