@@ -120,6 +120,16 @@ number9DOM.onclick = () => {
     else {displayDOM.textContent = displayDOM.textContent + "9"}
 };
 
+// zero
+number0DOM.onclick = () => {
+    
+    if (displayDOM.textContent == "0") return;
+    else {
+        displayDOM.textContent = displayDOM.textContent + "0"
+    }
+};
+
+
 btnClearDOM.onclick = () => hardClear();
 btnCEDOM.onclick = () => clearDisplay();
 
@@ -242,7 +252,6 @@ operatorDivideDOM.onclick = () => {
                 alert("bruh");
                 hardClear();
             }
-            
             else if (inputs.secondInput !== "0") {
                 displayStorageDOM.textContent = operate(inputs.operator, inputs.firstInput, inputs.secondInput);
                 inputs.operator = "/"
@@ -251,7 +260,6 @@ operatorDivideDOM.onclick = () => {
                 inputs.firstInput = Number(displayStorageDOM.textContent);
             }
         }
-
     }
     else {
         inputs.operator = "/";
@@ -273,7 +281,6 @@ operatorEqualDOM.onclick = () => {
                 clearDisplay();
             }
             else return;
-        
         }
 
         else if (inputs.firstInput !== undefined && inputs.secondInput == undefined) {
@@ -284,7 +291,6 @@ operatorEqualDOM.onclick = () => {
                 alert("dude");
                 hardClear();
             }
-            
             else {
                 displayStorageDOM.textContent = operate(inputs.operator, inputs.firstInput, inputs.secondInput);
                 softClear();
@@ -320,12 +326,3 @@ btnBackspaceDOM.onclick = () => {
     }
 };
 
-
-// zero
-number0DOM.onclick = () => {
-    
-    if (displayDOM.textContent == "0") return;
-    else {
-        displayDOM.textContent = displayDOM.textContent + "0"
-    }
-};
