@@ -7,31 +7,37 @@
     <title>Fettan | calculator</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="script/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=PT+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <p>Return:<span id="displayStorage">0</span></p>
-        <p>Display:<span id="display"></span></p>
-    </div>
-    <div>
-        <button id="operatorPlus">+</button>
-        <button id="operatorMinus">-</button>
-        <button id="operatorMultiply">*</button>
-        <button id="operatorDivide">/</button>
-        <button id="operatorEqual">=</button>
-        <button id="number0">0</button>
-        <button id="number1">1</button>
-        <button id="number2">2</button>
-        <button id="number3">3</button>
-        <button id="number4">4</button>
-        <button id="number5">5</button>
-        <button id="number6">6</button>
-        <button id="number7">7</button>
-        <button id="number8">8</button>
-        <button id="number9">9</button>
-        <button id="btnClear">AC</button>
-        <button id="btnDot">.</button>
-        <button id="btnBackspace">Delete</button>
+
+    <div class="container">
+        <div class="display">
+            <p id="pStorage"><span id="displayStorage"></span></p>
+            <p id="pOperator"><span id="displayOperator"></span></p>
+            <p id="pDisplay"><span id="display"></span></p>
+        </div>
+        <button class= "btn" id="btnClear">AC</button>
+        <button class= "btn" id="btnCE">CE</button>
+        <button class= "btn" id="btnBackspace">Del</button>
+        <button class= "btn" id="operatorDivide">÷</button>
+        <button class= "btn" id="number7">7</button>
+        <button class= "btn" id="number8">8</button>
+        <button class= "btn" id="number9">9</button>
+        <button class= "btn" id="operatorMultiply">x</button>
+        <button class= "btn" id="number4">4</button>
+        <button class= "btn" id="number5">5</button>
+        <button class= "btn" id="number6">6</button>
+        <button class= "btn" id="operatorMinus">–</button>
+        <button class= "btn" id="number1">1</button>
+        <button class= "btn" id="number2">2</button>
+        <button class= "btn" id="number3">3</button>
+        <button class= "btn" id="operatorPlus">+</button>
+        <button class= "btn" id="number0">0</button>
+        <button class= "btn" id="btnDot">.</button>
+        <button class= "btn" id="operatorEqual">=</button>
     </div>
 </body>
 </html>
