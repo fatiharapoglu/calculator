@@ -34,6 +34,14 @@ function operate(operator, a, b) {
 };
 
 
+// create object for storing inputs
+let inputs = {
+    firstInput: undefined,
+    secondInput: undefined,
+    operator: undefined,
+};
+
+
 // DOMs
 const operatorPlusDOM = document.getElementById("operatorPlus");
 const operatorMinusDOM = document.getElementById("operatorMinus");
@@ -83,45 +91,46 @@ function softClear() {
 
 
 // event handlers for buttons with removing the possibility to display numbers like 0234523
-number1DOM.onclick = () => {
+const number1Function = function () {
     if (displayDOM.textContent == "0") {displayDOM.textContent = "1"}
     else {displayDOM.textContent = displayDOM.textContent + "1"}
 };
-number2DOM.onclick = () => {
+const number2Function = function () {
     if (displayDOM.textContent == "0") {displayDOM.textContent = "2"}
     else {displayDOM.textContent = displayDOM.textContent + "2"}
 };
-number3DOM.onclick = () => {
+const number3Function = function () {
     if (displayDOM.textContent == "0") {displayDOM.textContent = "3"}
     else {displayDOM.textContent = displayDOM.textContent + "3"}
 };
-number4DOM.onclick = () => {
+const number4Function = function () {
     if (displayDOM.textContent == "0") {displayDOM.textContent = "4"}
     else {displayDOM.textContent = displayDOM.textContent + "4"}
 };
-number5DOM.onclick = () => {
+const number5Function = function () {
     if (displayDOM.textContent == "0") {displayDOM.textContent = "5"}
     else {displayDOM.textContent = displayDOM.textContent + "5"}
 };
-number6DOM.onclick = () => {
+const number6Function = function () {
     if (displayDOM.textContent == "0") {displayDOM.textContent = "6"}
     else {displayDOM.textContent = displayDOM.textContent + "6"}
 };
-number7DOM.onclick = () => {
+const number7Function = function () {
     if (displayDOM.textContent == "0") {displayDOM.textContent = "7"}
     else {displayDOM.textContent = displayDOM.textContent + "7"}
 };
-number8DOM.onclick = () => {
+const number8Function = function () {
     if (displayDOM.textContent == "0") {displayDOM.textContent = "8"}
     else {displayDOM.textContent = displayDOM.textContent + "8"}
 };
-number9DOM.onclick = () => {
+const number9Function = function () {
     if (displayDOM.textContent == "0") {displayDOM.textContent = "9"}
     else {displayDOM.textContent = displayDOM.textContent + "9"}
 };
 
-// zero
-number0DOM.onclick = () => {
+
+// zero function
+const number0Function = function () {
     
     if (displayDOM.textContent == "0") return;
     else {
@@ -130,18 +139,8 @@ number0DOM.onclick = () => {
 };
 
 
-btnClearDOM.onclick = () => hardClear();
-btnCEDOM.onclick = () => clearDisplay();
-
-let inputs = {
-    firstInput: undefined,
-    secondInput: undefined,
-    operator: undefined,
-};
-
-
 // PLUS +++++++++++ PLUS
-operatorPlusDOM.onclick = () => {
+const plusFunction = function () {
     
     if (displayDOM.textContent !== ""){
 
@@ -171,7 +170,7 @@ operatorPlusDOM.onclick = () => {
 
 
 // MINUS ------------ MINUS
-operatorMinusDOM.onclick = () => {
+const minusFunction = function () {
     
     if (displayDOM.textContent !== ""){
 
@@ -202,7 +201,7 @@ operatorMinusDOM.onclick = () => {
 
 
 // MULTIPLY ************** MULTIPLY
-operatorMultiplyDOM.onclick = () => {
+const multiplyFunction = function () {
     
     if (displayDOM.textContent !== ""){
 
@@ -232,7 +231,7 @@ operatorMultiplyDOM.onclick = () => {
 
 
 // DIVIDE ////////////////// DIVIDE
-operatorDivideDOM.onclick = () => {
+const divideFunction = function () {
 
     if (displayDOM.textContent !== ""){
 
@@ -269,7 +268,7 @@ operatorDivideDOM.onclick = () => {
 
 
 // EQUAL ================ EQUAL
-operatorEqualDOM.onclick = () => {
+const equalFunction = function () {
 
     if (displayDOM.textContent !== ""){
 
@@ -302,7 +301,7 @@ operatorEqualDOM.onclick = () => {
 
 
 // DOT ........................... DOT
-btnDotDOM.onclick = () => {
+const dotFunction = function () {
     
     if (displayDOM.textContent.includes(".")) return;
 
@@ -316,8 +315,8 @@ btnDotDOM.onclick = () => {
 };
 
 
-// backspace button
-btnBackspaceDOM.onclick = () => {
+// backspace function
+const backspaceFunction = function () {
 
     if (displayDOM.textContent == "") return;
 
@@ -326,3 +325,92 @@ btnBackspaceDOM.onclick = () => {
     }
 };
 
+
+// mouse click events
+number1DOM.onclick = () => number1Function();
+number2DOM.onclick = () => number2Function();
+number3DOM.onclick = () => number3Function();
+number4DOM.onclick = () => number4Function();
+number5DOM.onclick = () => number5Function();
+number6DOM.onclick = () => number6Function();
+number7DOM.onclick = () => number7Function();
+number8DOM.onclick = () => number8Function();
+number9DOM.onclick = () => number9Function();
+number0DOM.onclick = () => number0Function();
+operatorPlusDOM.onclick = () => plusFunction();
+operatorMinusDOM.onclick = () => minusFunction();
+operatorMultiplyDOM.onclick = () => multiplyFunction();
+operatorDivideDOM.onclick = () => divideFunction();
+operatorEqualDOM.onclick = () => equalFunction();
+btnDotDOM.onclick = () => dotFunction();
+btnBackspaceDOM.onclick = () => backspaceFunction();
+btnClearDOM.onclick = () => hardClear();
+btnCEDOM.onclick = () => clearDisplay();
+
+
+// keyboard events
+window.addEventListener("keydown", (event) => {
+
+    if (event.defaultPrevented) {
+        return;
+    }
+  
+    switch (event.key) {
+        case "1":
+            number1Function();
+            break;
+        case "2":
+            number2Function();
+            break;
+        case "3":
+            number3Function();
+            break;
+        case "4":
+            number4Function();
+            break;
+        case "5":
+            number5Function();
+            break;
+        case "6":
+            number6Function();
+            break;
+        case "7":
+            number7Function();
+            break;
+        case "8":
+            number8Function();
+            break;
+        case "9":
+            number9Function();
+            break;
+        case "Backspace":
+            backspaceFunction();
+            break;
+        case "0":
+            number0Function();
+            break;
+        case "+":
+            plusFunction();
+            break;
+        case "-":
+            minusFunction();
+            break;
+        case "*":
+            multiplyFunction();
+            break;
+        case "/":
+            divideFunction();
+            break;
+        case "Enter":
+            equalFunction();
+            break;
+        case ".":
+            dotFunction();
+            break;
+        default:
+            return;
+    }
+    event.preventDefault();
+
+}, 
+true);
