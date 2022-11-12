@@ -3,22 +3,22 @@
 const add = function(a, b) {
     console.log(a + b);
     return a + b;
-}
+};
 
 const subtract = function(a, b) {
     console.log(a - b);
     return a - b;
-}
+};
 
 const multiply = function(a, b) {
     console.log(a * b);
     return a * b;
-}
+};
 
 const divide = function(a, b) {
     console.log(a / b);
     return a / b;
-}
+};
 
 
 function operate(operator, a, b) {
@@ -62,7 +62,7 @@ const displayStorageDOM = document.getElementById("displayStorage");
 // clear display function
 function clearDisplay() {
     displayDOM.textContent = "";
-}
+};
 
 // hard clear -> everything to initial, for AC button
 function hardClear() {
@@ -71,14 +71,14 @@ function hardClear() {
     inputs.secondInput = undefined;
     inputs.operator = undefined;
     displayStorageDOM.textContent = "";
-}
+};
 
 // soft clear -> without storage display
 function softClear() {
     displayDOM.textContent = "";
     inputs.firstInput = undefined;
     inputs.secondInput = undefined;
-}
+};
 
 
 // event handlers for buttons
@@ -111,28 +111,27 @@ operatorPlusDOM.onclick = () => {
 
         if (inputs.firstInput == undefined) {
             inputs.operator = "+";
-            inputs.firstInput = new Number(displayDOM.textContent);
+            inputs.firstInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = inputs.firstInput;
             clearDisplay();
         }
         
         else if (inputs.firstInput !== undefined && inputs.secondInput == undefined) {
-            inputs.secondInput = new Number(displayDOM.textContent);
+            inputs.secondInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = operate(inputs.operator, inputs.firstInput, inputs.secondInput);
             inputs.operator = "+"
             softClear();
-            inputs.firstInput = new Number(displayStorageDOM.textContent);
+            inputs.firstInput = Number(displayStorageDOM.textContent);
         }
         
         else if (inputs.firstInput !== undefined && inputs.secondInput !== undefined) {
-            
             inputs.operator = "+";
         }
     }
     else {
         inputs.operator = "+";
     }
-}
+};
 
 
 // MINUS ------------ MINUS
@@ -142,22 +141,21 @@ operatorMinusDOM.onclick = () => {
 
         if (inputs.firstInput == undefined) {
             inputs.operator = "-";
-            inputs.firstInput = new Number(displayDOM.textContent);
+            inputs.firstInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = inputs.firstInput;
             clearDisplay();
         }
         
         else if (inputs.firstInput !== undefined && inputs.secondInput == undefined) {
-            inputs.secondInput = new Number(displayDOM.textContent);
+            inputs.secondInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = operate(inputs.operator, inputs.firstInput, inputs.secondInput);
             inputs.operator = "-";
             softClear();
-            inputs.firstInput = new Number(displayStorageDOM.textContent);
+            inputs.firstInput = Number(displayStorageDOM.textContent);
             
         }
         
         else if (inputs.firstInput !== undefined && inputs.secondInput !== undefined) {
-            
             inputs.operator = "-";
             
             
@@ -166,7 +164,7 @@ operatorMinusDOM.onclick = () => {
     else {
         inputs.operator = "-";
     }
-}
+};
 
 
 // MULTIPLY ************** MULTIPLY
@@ -176,28 +174,27 @@ operatorMultiplyDOM.onclick = () => {
 
         if (inputs.firstInput == undefined) {
             inputs.operator = "*";
-            inputs.firstInput = new Number(displayDOM.textContent);
+            inputs.firstInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = inputs.firstInput; 
             clearDisplay();
         }
         
         else if (inputs.firstInput !== undefined && inputs.secondInput == undefined) {
-            inputs.secondInput = new Number(displayDOM.textContent);
+            inputs.secondInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = operate(inputs.operator, inputs.firstInput, inputs.secondInput);
             inputs.operator = "*";
             softClear();
-            inputs.firstInput = new Number(displayStorageDOM.textContent);
+            inputs.firstInput = Number(displayStorageDOM.textContent);
         }
         
         else if (inputs.firstInput !== undefined && inputs.secondInput !== undefined) {
-            
             inputs.operator = "*";
         }
     }
     else {
         inputs.operator = "*";
     }
-}
+};
 
 
 // DIVIDE ////////////////// DIVIDE
@@ -207,29 +204,28 @@ operatorDivideDOM.onclick = () => {
 
         if (inputs.firstInput == undefined) {
             inputs.operator = "/"
-            inputs.firstInput = new Number(displayDOM.textContent);
+            inputs.firstInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = inputs.firstInput; 
             clearDisplay();
             
         }
         
         else if (inputs.firstInput !== undefined && inputs.secondInput == undefined) {
-            inputs.secondInput = new Number(displayDOM.textContent);
+            inputs.secondInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = operate(inputs.operator, inputs.firstInput, inputs.secondInput);
             inputs.operator = "/"
             softClear();
-            inputs.firstInput = new Number(displayStorageDOM.textContent);
+            inputs.firstInput = Number(displayStorageDOM.textContent);
         }
         
         else if (inputs.firstInput !== undefined && inputs.secondInput !== undefined) {
-            
             inputs.operator = "/";
         }
     }
     else {
         inputs.operator = "/";
     }
-}
+};
 
 
 // EQUAL ================ EQUAL
@@ -242,18 +238,18 @@ operatorEqualDOM.onclick = () => {
         }
 
         else if (inputs.firstInput !== undefined && inputs.secondInput == undefined) {
-            inputs.secondInput = new Number(displayDOM.textContent);
+            inputs.secondInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = operate(inputs.operator, inputs.firstInput, inputs.secondInput);
             softClear();
-            inputs.firstInput = new Number(displayStorageDOM.textContent);
+            inputs.firstInput = Number(displayStorageDOM.textContent);
         }
 
         else if (inputs.firstInput !== undefined && inputs.secondInput !== undefined) {
             displayStorageDOM.textContent = operate(inputs.operator, inputs.firstInput, inputs.secondInput);
             softClear();
-            inputs.firstInput = new Number(displayStorageDOM.textContent);
+            inputs.firstInput = Number(displayStorageDOM.textContent);
         }
     }
-}
+};
 
 
