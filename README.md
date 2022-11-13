@@ -1,7 +1,7 @@
-# etch - a - sketch
+# Calculator
 
-[The Odin Project](https://www.theodinproject.com/lessons/foundations-etch-a-sketch)'s etch-a-sketch project.
+[The Odin Project](https://www.theodinproject.com/lessons/foundations-calculator)'s calculator project.
 
-[Click for live preview](https://fatiharapoglu.github.io/sketch/)
+[Click for live preview](https://fatiharapoglu.github.io/calculator/)
 
-![RPS](/assets/sketch.png)
+![RPS](assets/calculator.png)
