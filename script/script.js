@@ -1,17 +1,14 @@
 // basic math functions with rounding decimals 6 if necessary
-const add = function(a, b) {
+const add = function (a, b) {
     return Math.round((a + b + Number.EPSILON) * 1000000) / 1000000;
 };
-
-const subtract = function(a, b) {
+const subtract = function (a, b) {
     return Math.round((a - b + Number.EPSILON) * 1000000) / 1000000;
 };
-
-const multiply = function(a, b) {
+const multiply = function (a, b) {
     return Math.round((a * b + Number.EPSILON) * 1000000) / 1000000;
 };
-
-const divide = function(a, b) {
+const divide = function (a, b) {
     return Math.round((a / b + Number.EPSILON) * 1000000) / 1000000;
 };
 
@@ -26,7 +23,7 @@ function operate(operator, a, b) {
     } else if (operator == "/") {
         return divide(a, b);
     }
-};
+}
 
 // create object for storing inputs
 let inputs = {
@@ -85,63 +82,63 @@ function softClear() {
 }
 
 // event handlers for buttons with removing the possibility to display numbers like 0234523
-const number1Function = function() {
+const number1Function = function () {
     if (displayDOM.textContent == "0") {
         displayDOM.textContent = "1";
     } else {
         displayDOM.textContent = displayDOM.textContent + "1";
     }
 };
-const number2Function = function() {
+const number2Function = function () {
     if (displayDOM.textContent == "0") {
         displayDOM.textContent = "2";
     } else {
         displayDOM.textContent = displayDOM.textContent + "2";
     }
 };
-const number3Function = function() {
+const number3Function = function () {
     if (displayDOM.textContent == "0") {
         displayDOM.textContent = "3";
     } else {
         displayDOM.textContent = displayDOM.textContent + "3";
     }
 };
-const number4Function = function() {
+const number4Function = function () {
     if (displayDOM.textContent == "0") {
         displayDOM.textContent = "4";
     } else {
         displayDOM.textContent = displayDOM.textContent + "4";
     }
 };
-const number5Function = function() {
+const number5Function = function () {
     if (displayDOM.textContent == "0") {
         displayDOM.textContent = "5";
     } else {
         displayDOM.textContent = displayDOM.textContent + "5";
     }
 };
-const number6Function = function() {
+const number6Function = function () {
     if (displayDOM.textContent == "0") {
         displayDOM.textContent = "6";
     } else {
         displayDOM.textContent = displayDOM.textContent + "6";
     }
 };
-const number7Function = function() {
+const number7Function = function () {
     if (displayDOM.textContent == "0") {
         displayDOM.textContent = "7";
     } else {
         displayDOM.textContent = displayDOM.textContent + "7";
     }
 };
-const number8Function = function() {
+const number8Function = function () {
     if (displayDOM.textContent == "0") {
         displayDOM.textContent = "8";
     } else {
         displayDOM.textContent = displayDOM.textContent + "8";
     }
 };
-const number9Function = function() {
+const number9Function = function () {
     if (displayDOM.textContent == "0") {
         displayDOM.textContent = "9";
     } else {
@@ -150,7 +147,7 @@ const number9Function = function() {
 };
 
 // zero function
-const number0Function = function() {
+const number0Function = function () {
     if (displayDOM.textContent == "0") return;
     else {
         displayDOM.textContent = displayDOM.textContent + "0";
@@ -158,7 +155,7 @@ const number0Function = function() {
 };
 
 // PLUS +++++++++++ PLUS
-const plusFunction = function() {
+const plusFunction = function () {
     if (displayDOM.textContent !== "") {
         if (inputs.firstInput == undefined) {
             inputs.operator = "+";
@@ -166,10 +163,7 @@ const plusFunction = function() {
             inputs.firstInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = inputs.firstInput;
             clearDisplay();
-        } else if (
-            inputs.firstInput !== undefined &&
-            inputs.secondInput == undefined
-        ) {
+        } else if (inputs.firstInput !== undefined && inputs.secondInput == undefined) {
             inputs.secondInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = operate(
                 inputs.operator,
@@ -188,7 +182,7 @@ const plusFunction = function() {
 };
 
 // MINUS ------------ MINUS
-const minusFunction = function() {
+const minusFunction = function () {
     if (displayDOM.textContent !== "") {
         if (inputs.firstInput == undefined) {
             inputs.operator = "-";
@@ -196,10 +190,7 @@ const minusFunction = function() {
             inputs.firstInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = inputs.firstInput;
             clearDisplay();
-        } else if (
-            inputs.firstInput !== undefined &&
-            inputs.secondInput == undefined
-        ) {
+        } else if (inputs.firstInput !== undefined && inputs.secondInput == undefined) {
             inputs.secondInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = operate(
                 inputs.operator,
@@ -218,7 +209,7 @@ const minusFunction = function() {
 };
 
 // MULTIPLY ************** MULTIPLY
-const multiplyFunction = function() {
+const multiplyFunction = function () {
     if (displayDOM.textContent !== "") {
         if (inputs.firstInput == undefined) {
             inputs.operator = "*";
@@ -226,10 +217,7 @@ const multiplyFunction = function() {
             inputs.firstInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = inputs.firstInput;
             clearDisplay();
-        } else if (
-            inputs.firstInput !== undefined &&
-            inputs.secondInput == undefined
-        ) {
+        } else if (inputs.firstInput !== undefined && inputs.secondInput == undefined) {
             inputs.secondInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = operate(
                 inputs.operator,
@@ -248,7 +236,7 @@ const multiplyFunction = function() {
 };
 
 // DIVIDE ////////////////// DIVIDE
-const divideFunction = function() {
+const divideFunction = function () {
     if (displayDOM.textContent !== "") {
         if (inputs.firstInput == undefined) {
             inputs.operator = "/";
@@ -256,10 +244,7 @@ const divideFunction = function() {
             inputs.firstInput = Number(displayDOM.textContent);
             displayStorageDOM.textContent = inputs.firstInput;
             clearDisplay();
-        } else if (
-            inputs.firstInput !== undefined &&
-            inputs.secondInput == undefined
-        ) {
+        } else if (inputs.firstInput !== undefined && inputs.secondInput == undefined) {
             inputs.secondInput = Number(displayDOM.textContent);
             if (inputs.secondInput == "0") {
                 openModal();
@@ -284,7 +269,7 @@ const divideFunction = function() {
 };
 
 // EQUAL ================ EQUAL
-const equalFunction = function() {
+const equalFunction = function () {
     if (displayDOM.textContent !== "") {
         if (inputs.firstInput == undefined && inputs.secondInput == undefined) {
             if (inputs.operator == "-") {
@@ -292,10 +277,7 @@ const equalFunction = function() {
                 displayStorageDOM.textContent = inputs.firstInput;
                 clearDisplay();
             } else return;
-        } else if (
-            inputs.firstInput !== undefined &&
-            inputs.secondInput == undefined
-        ) {
+        } else if (inputs.firstInput !== undefined && inputs.secondInput == undefined) {
             inputs.secondInput = Number(displayDOM.textContent);
             if (inputs.secondInput == "0" && inputs.operator == "/") {
                 openModal();
@@ -315,7 +297,7 @@ const equalFunction = function() {
 };
 
 // DOT ........................... DOT
-const dotFunction = function() {
+const dotFunction = function () {
     if (displayDOM.textContent.includes(".")) return;
     if (displayDOM.textContent == "") {
         displayDOM.textContent = displayDOM.textContent + "0.";
@@ -325,7 +307,7 @@ const dotFunction = function() {
 };
 
 // backspace function
-const backspaceFunction = function() {
+const backspaceFunction = function () {
     if (displayDOM.textContent == "") return;
     else {
         displayDOM.textContent = displayDOM.textContent.slice(0, -1);
@@ -423,8 +405,8 @@ window.addEventListener(
 // error modal settings
 function openModal() {
     modalDOM.style.display = "block";
-};
+}
 
-spanDOM.onclick = function() {
+spanDOM.onclick = function () {
     modalDOM.style.display = "none";
 };

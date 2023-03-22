@@ -1,53 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fettan | The Calculator App</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="script/script.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=PT+Mono&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/calculator.png" type="image/x-icon">
-</head>
-<body>
-    <div class="container">
-        <div class="display">
-            <p id="p-storage"><span id="display-storage"></span></p>
-            <p id="p-operator"><span id="display-operator"></span></p>
-            <p id="p-display"><span id="display">0</span></p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fettan | The Calculator App</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="script/script.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Orbitron&family=PT+Mono&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="shortcut icon" href="assets/calculator.png" type="image/x-icon" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="display">
+                <p id="p-storage"><span id="display-storage"></span></p>
+                <p id="p-operator"><span id="display-operator"></span></p>
+                <p id="p-display"><span id="display">0</span></p>
+            </div>
+            <button class="btn" id="btn-clear">AC</button>
+            <button class="btn" id="btn-CE">CE</button>
+            <button class="btn" id="btn-backspace">Del</button>
+            <button class="btn" id="operator-divide">÷</button>
+            <button class="btn" id="number7">7</button>
+            <button class="btn" id="number8">8</button>
+            <button class="btn" id="number9">9</button>
+            <button class="btn" id="operator-multiply">x</button>
+            <button class="btn" id="number4">4</button>
+            <button class="btn" id="number5">5</button>
+            <button class="btn" id="number6">6</button>
+            <button class="btn" id="operator-minus">–</button>
+            <button class="btn" id="number1">1</button>
+            <button class="btn" id="number2">2</button>
+            <button class="btn" id="number3">3</button>
+            <button class="btn" id="operator-plus">+</button>
+            <button class="btn" id="number0">0</button>
+            <button class="btn" id="btn-dot">.</button>
+            <button class="btn" id="operator-equal">=</button>
+            <div class="footer">
+                <span
+                    ><a href="https://www.theodinproject.com/" id="odin">The Odin Project</a> |
+                    fatiharapoglu</span
+                >
+                <a href="https://github.com/fatiharapoglu"
+                    ><img
+                        class="github-icon"
+                        src="assets/GitHub-Mark-120px-plus.png"
+                        alt="github-logo"
+                /></a>
+            </div>
         </div>
-        <button class= "btn" id="btn-clear">AC</button>
-        <button class= "btn" id="btn-CE">CE</button>
-        <button class= "btn" id="btn-backspace">Del</button>
-        <button class= "btn" id="operator-divide">÷</button>
-        <button class= "btn" id="number7">7</button>
-        <button class= "btn" id="number8">8</button>
-        <button class= "btn" id="number9">9</button>
-        <button class= "btn" id="operator-multiply">x</button>
-        <button class= "btn" id="number4">4</button>
-        <button class= "btn" id="number5">5</button>
-        <button class= "btn" id="number6">6</button>
-        <button class= "btn" id="operator-minus">–</button>
-        <button class= "btn" id="number1">1</button>
-        <button class= "btn" id="number2">2</button>
-        <button class= "btn" id="number3">3</button>
-        <button class= "btn" id="operator-plus">+</button>
-        <button class= "btn" id="number0">0</button>
-        <button class= "btn" id="btn-dot">.</button>
-        <button class= "btn" id="operator-equal">=</button>
-        <div class="footer">
-            <span><a href="https://www.theodinproject.com/lessons/foundations-calculator" id="odin">The Odin Project</a> | fatiharapoglu</span>
-            <a href="https://github.com/fatiharapoglu"><img class="github-icon" src="assets/GitHub-Mark-120px-plus.png" alt="github-logo"></a>
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close">OK</span>
+                <img src="assets/fatalerror.jpg" alt="error" />
+            </div>
         </div>
-    </div>
-    <div class="modal">
-        <div class="modal-content">
-            <span class="close">OK</span>
-            <img src="assets/fatalerror.jpg" alt="ERROR" style="max-width: 325px;">
-        </div>
-    </div>
-</body>
+    </body>
 </html>

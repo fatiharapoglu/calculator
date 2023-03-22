@@ -1,7 +1,16 @@
 # Calculator
 
-[The Odin Project](https://www.theodinproject.com/lessons/foundations-calculator)'s calculator project.
+Created with **HTML**, **CSS** and **JavaScript**.
 
-[Click for live preview](https://fatiharapoglu.github.io/calculator/)
+⮕ [Live preview](https://fatiharapoglu.github.io/calculator/)
 
-![RPS](assets/calculator.png)
+## Features
+
+-   All basic operations are supported (divide, multiple, add, subtract).
+-   Keyboard support.
+-   Reset/Clear/Delete options for better user experience.
+-   Cool Windows XP style error when divided by zero.
+
+## How It Looks
+
+![ss](/assets/calculator.png)
